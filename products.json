@@ -1,0 +1,46 @@
+{
+        "sampledata":
+        [
+            {
+                "id": 1,
+                "name": "Product One",
+                "price": 118,
+                "description": "This is the test products..",
+                "canPurchase": true,
+                "image": "placeholder.png",
+                "reviews": [
+                    {
+                        "stars": 5,
+                        "body": "I love this product!",
+                        "author": "joe@thomas.com"
+                    },
+                    {
+                        "stars": 2,
+                        "body": "This product sucks",
+                        "author": "tim@hater.com"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Product Two",
+                "price": 100,
+                "description": "This is the test products..",
+                "canPurchase": false,
+                "image": "placeholder.png",
+                "reviews": [
+                    {
+                        "stars": 3,
+                        "body": "I love this product!",
+                        "author": "joe@thomas.com"
+                    },
+                    {
+                        "stars": 4,
+                        "body": "This product sucks",
+                        "author": "tim@hater.com"
+                    }
+                ]
+            }
+        ]
+
+}

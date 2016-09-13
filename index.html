@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- include ng-app="store" to run store module when <do></do>cument load -->
+<html ng-app="store">
+  <head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="products.js"></script>
+    <link rel="stylesheet" href="todo.css">
+  </head>
+  <body>
+    <h2>test app</h2>
+    <!--
+        **Directives = ng-controller
+        Can set alias for controller ex controllerName as aliasName
+    -->
+    <div ng-controller="StoreController as store">
+        <!-- ng-repeat - loopring the store.products items -->
+        <div ng-repeat="product in store.product">
+            <!-- Expressions : {{...}}-->
+            <h1>{{product.name}}</h1>
+            <!-- Filters : currency Filter using pipe symbal - It pass output to the filters-->
+            <h2>{{product.price | currency}}</h2>
+            <!--
+                we are not using the src because, browser try to load before Expression load.
+                So we are using ng-src (ng-source)
+            -->
+            <img ng-src="{{product.image}}" width="200">
+            <button ng-show="product.canPurchase">Add to Cart</button>
+
+            <!-- tabs here -->
+            <div ng-controller="PanelController as panel">
+                <product-panels-tab></product-panels-tab>
+                <!-- <div ng-include="'product-panels.html'" ng-controller="ReviewController as reviewCtrl"></div> -->
+            </div><!-- ./ tabsContainer -->
+
+        </div>
+    </div><!-- /.StoreController -->
+
+    <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+  </body>
+</html>
